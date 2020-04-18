@@ -1,6 +1,5 @@
 package com.nfragiskatos.fruitpicker_databinding
 
-import androidx.databinding.Bindable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,15 +17,14 @@ class MainViewModel : ViewModel() {
     This is 2-way databinding. When value changes in code it will change on screen, and when the
     value changes on screen it will change in code
      */
-    @Bindable
     val editTextContent = MutableLiveData<String>()
 
-    private val _displayEditTextContent = MutableLiveData<String>()
-    val displayEditTextContent: LiveData<String>
-        get() = _displayEditTextContent
+    private val _displayedEditTextContent = MutableLiveData<String>()
+    val displayedEditTextContent: LiveData<String>
+        get() = _displayedEditTextContent
 
     fun onDisplayEditTextContentClick() {
-        _displayEditTextContent.value = editTextContent.value
+        _displayedEditTextContent.value = editTextContent.value
     }
 
     fun onSelectRandomEditTextFruit() {
