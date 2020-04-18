@@ -1,8 +1,10 @@
 package com.nfragiskatos.fruitpicker_databinding
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.nfragiskatos.fruitpicker_databinding.databinding.ActivityMainBinding
 
@@ -28,6 +30,10 @@ class MainActivity : AppCompatActivity() {
             this.lifecycleOwner = this@MainActivity
             this.viewmodel = mainViewModel
         }
+
+        mainViewModel.editTextContent.observe(this, Observer {
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        })
 
     }
 }
