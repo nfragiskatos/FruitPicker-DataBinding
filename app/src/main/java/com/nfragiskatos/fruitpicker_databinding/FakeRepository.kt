@@ -2,6 +2,7 @@ package com.nfragiskatos.fruitpicker_databinding
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import java.util.*
 
 /**
  * Created by Nicholas Fragiskatos on 4/18/2020.
@@ -23,5 +24,14 @@ object FakeRepository {
 
     init {
         _currentRandomFruitName.value = fruitNames.first()
+    }
+
+    fun getRandomFruitName(): String {
+        val random = Random()
+        return fruitNames[random.nextInt(fruitNames.size)]
+    }
+
+    fun changeCurrentRandomFruitName() {
+        _currentRandomFruitName.value = getRandomFruitName()
     }
 }
