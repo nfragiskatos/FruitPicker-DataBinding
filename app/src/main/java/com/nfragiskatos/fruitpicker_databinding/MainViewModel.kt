@@ -20,4 +20,12 @@ class MainViewModel : ViewModel() {
      */
     @Bindable
     val editTextContent = MutableLiveData<String>()
+
+    private val _displayEditTextContent = MutableLiveData<String>()
+    val displayEditTextContent: LiveData<String>
+        get() = _displayEditTextContent
+
+    fun onDisplayEditTextContentClick() {
+        _displayEditTextContent.value = editTextContent.value
+    }
 }
