@@ -45,7 +45,7 @@
 
         <!--
                The @= signifies 2-way data binding. Whenever this edit text is changed in the UI
-               it will be reflected in the underlying data object, and when the underlying data object
+               it will be reflected in the underlying view model property, and when the underlying view model property
                is changed it will be reflected in this edit text -->
         <EditText
             android:id="@+id/editText"
