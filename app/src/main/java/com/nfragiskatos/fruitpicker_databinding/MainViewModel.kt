@@ -28,4 +28,8 @@ class MainViewModel : ViewModel() {
     fun onDisplayEditTextContentClick() {
         _displayEditTextContent.value = editTextContent.value
     }
+
+    fun onSelectRandomEditTextFruit() {
+        editTextContent.value = FakeRepository.getRandomFruitName()
+    }
 }
