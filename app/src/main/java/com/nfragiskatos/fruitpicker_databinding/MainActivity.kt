@@ -18,6 +18,9 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding is an auto generated class. Whenever you use the <layout> + <data> tags in your activity xml
         the class will be auto-generated
         Boilerplate code....
+
+        - Need to set lifecycle owner so observables know when one of the observers are no longer available
+        - Need to initialize our variable in our xml with the view model we instatiated earlier
          */
         DataBindingUtil.setContentView<ActivityMainBinding>(
             this, R.layout.activity_main
